@@ -1,0 +1,11 @@
+customer_id,name,email,company,region,tier,join_date,total_spent,orders_count
+CUST001,Alice Johnson,alice@acmecorp.com,Acme Corp,North,Enterprise,2023-01-15,125000.00,42
+CUST002,Bob Smith,bob@techsolutions.com,Tech Solutions,South,Pro,2023-03-22,45000.00,18
+CUST003,Carol White,carol@globalinc.com,Global Inc,East,Enterprise,2022-11-08,210000.00,67
+CUST004,Dave Brown,dave@startupxyz.com,Startup XYZ,West,Starter,2024-01-10,12000.00,8
+CUST005,Eve Davis,eve@megacorp.com,Mega Corp,North,Enterprise,2022-06-30,380000.00,95
+CUST006,Frank Miller,frank@midmarket.com,Mid Market Co,South,Pro,2023-07-14,67000.00,24
+CUST007,Grace Wilson,grace@innovate.io,Innovate IO,East,Pro,2023-09-01,52000.00,21
+CUST008,Henry Moore,henry@retail360.com,Retail 360,West,Starter,2024-02-28,8500.00,5
+CUST009,Iris Taylor,iris@financeplus.com,Finance Plus,North,Enterprise,2022-04-12,290000.00,78
+CUST010,Jack Anderson,jack@cloudfirst.com,Cloud First,South,Pro,2023-05-19,73000.00,29

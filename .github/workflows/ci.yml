@@ -1,0 +1,137 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.11"
+  DOCKER_IMAGE: production-chatbot
+
+jobs:
+  # ── Job 1: Lint ─────────────────────────────────────────────────────────────
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install lint dependencies
+        run: pip install ruff black
+
+      - name: Run ruff (linter)
+        run: ruff check . --ignore E501
+
+      - name: Run black (formatter check)
+        run: black --check .
+
+  # ── Job 2: Unit Tests ────────────────────────────────────────────────────────
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: lint
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: chatbot_user
+          POSTGRES_PASSWORD: chatbot_pass
+          POSTGRES_DB: chatbot
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+      LANGCHAIN_API_KEY: ${{ secrets.LANGCHAIN_API_KEY }}
+      LANGCHAIN_TRACING_V2: "false"
+      JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+      POSTGRES_URL: postgresql://chatbot_user:chatbot_pass@localhost:5432/chatbot
+      REDIS_URL: redis://localhost:6379
+      CSV_DIR: data/csv_files
+      APP_ENV: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: pytest tests/unit/ -v --tb=short --cov=. --cov-report=xml
+
+      - name: Run integration tests
+        run: pytest tests/integration/ -v --tb=short
+
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v4
+        with:
+          file: coverage.xml
+          fail_ci_if_error: false
+
+  # ── Job 3: Docker Build ──────────────────────────────────────────────────────
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build API image (production stage)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: docker/Dockerfile
+          target: production
+          push: false
+          tags: ${{ env.DOCKER_IMAGE }}-api:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build UI image (streamlit stage)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: docker/Dockerfile
+          target: streamlit
+          push: false
+          tags: ${{ env.DOCKER_IMAGE }}-ui:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

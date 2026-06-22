@@ -1,0 +1,11 @@
+product_id,name,category,unit_price,cost_price,margin_pct,stock_quantity,supplier,launch_date,rating
+PROD001,Laptop Pro,Electronics,1200.00,720.00,40.0,150,TechSource Ltd,2023-01-01,4.8
+PROD002,Monitor 4K,Electronics,800.00,450.00,43.8,200,DisplayCo,2023-03-15,4.7
+PROD003,Wireless Mouse,Electronics,45.00,18.00,60.0,1500,PeriphHub,2022-06-01,4.5
+PROD004,Keyboard Mech,Electronics,120.00,55.00,54.2,800,PeriphHub,2022-09-01,4.6
+PROD005,Standing Desk,Furniture,600.00,280.00,53.3,80,OfficeFurn,2023-05-01,4.4
+PROD006,Office Chair,Furniture,350.00,160.00,54.3,120,OfficeFurn,2022-01-01,4.3
+PROD007,Filing Cabinet,Furniture,280.00,130.00,53.6,60,OfficeFurn,2022-03-01,4.1
+PROD008,Webcam HD,Electronics,150.00,65.00,56.7,400,TechSource Ltd,2023-07-01,4.5
+PROD009,USB Hub,Electronics,60.00,22.00,63.3,600,PeriphHub,2023-02-01,4.6
+PROD010,Desk Lamp,Furniture,85.00,35.00,58.8,300,OfficeFurn,2023-04-01,4.2

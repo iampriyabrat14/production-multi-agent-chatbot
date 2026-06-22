@@ -1,0 +1,11 @@
+employee_id,name,email,department,role,salary,join_date,region,manager,performance_score
+EMP001,Alice Johnson,alice@company.com,Sales,Sales Rep,75000,2022-01-15,North,Sarah Connor,4.8
+EMP002,Bob Smith,bob@company.com,Sales,Sales Rep,72000,2022-03-22,South,Sarah Connor,4.2
+EMP003,Carol White,carol@company.com,Sales,Sales Rep,78000,2021-11-08,East,Sarah Connor,4.9
+EMP004,Dave Brown,dave@company.com,Sales,Sales Rep,70000,2023-01-10,West,Sarah Connor,3.8
+EMP005,Sarah Connor,sarah@company.com,Sales,Sales Manager,110000,2020-06-30,North,John Smith,4.7
+EMP006,John Smith,john@company.com,Engineering,Engineer,95000,2021-03-14,South,Mike Johnson,4.5
+EMP007,Emma Davis,emma@company.com,Engineering,Senior Engineer,120000,2020-09-01,East,Mike Johnson,4.8
+EMP008,Mike Johnson,mike@company.com,Engineering,Engineering Manager,130000,2019-02-28,West,CEO,4.6
+EMP009,Liam Wilson,liam@company.com,Marketing,Marketing Specialist,68000,2022-05-12,North,Jane Doe,4.1
+EMP010,Jane Doe,jane@company.com,Marketing,Marketing Manager,105000,2020-08-19,South,CEO,4.5

@@ -1,0 +1,26 @@
+order_id,date,product,category,quantity,unit_price,total_revenue,region,sales_rep,quarter
+ORD001,2024-01-05,Laptop Pro,Electronics,10,1200.00,12000.00,North,Alice,Q1
+ORD002,2024-01-12,Office Chair,Furniture,25,350.00,8750.00,South,Bob,Q1
+ORD003,2024-01-18,Wireless Mouse,Electronics,100,45.00,4500.00,East,Carol,Q1
+ORD004,2024-02-03,Standing Desk,Furniture,15,600.00,9000.00,West,Dave,Q1
+ORD005,2024-02-14,Monitor 4K,Electronics,20,800.00,16000.00,North,Alice,Q1
+ORD006,2024-02-22,Keyboard Mech,Electronics,50,120.00,6000.00,South,Bob,Q1
+ORD007,2024-03-01,Laptop Pro,Electronics,8,1200.00,9600.00,East,Carol,Q1
+ORD008,2024-03-15,Filing Cabinet,Furniture,12,280.00,3360.00,West,Dave,Q1
+ORD009,2024-04-02,Monitor 4K,Electronics,30,800.00,24000.00,North,Alice,Q2
+ORD010,2024-04-18,Wireless Mouse,Electronics,200,45.00,9000.00,South,Bob,Q2
+ORD011,2024-05-05,Standing Desk,Furniture,20,600.00,12000.00,East,Carol,Q2
+ORD012,2024-05-20,Laptop Pro,Electronics,15,1200.00,18000.00,West,Dave,Q2
+ORD013,2024-06-03,Office Chair,Furniture,40,350.00,14000.00,North,Alice,Q2
+ORD014,2024-06-15,Keyboard Mech,Electronics,80,120.00,9600.00,South,Bob,Q2
+ORD015,2024-07-01,Monitor 4K,Electronics,25,800.00,20000.00,East,Carol,Q3
+ORD016,2024-07-14,Laptop Pro,Electronics,20,1200.00,24000.00,West,Dave,Q3
+ORD017,2024-08-02,Standing Desk,Furniture,30,600.00,18000.00,North,Alice,Q3
+ORD018,2024-08-19,Wireless Mouse,Electronics,300,45.00,13500.00,South,Bob,Q3
+ORD019,2024-09-05,Office Chair,Furniture,50,350.00,17500.00,East,Carol,Q3
+ORD020,2024-09-22,Keyboard Mech,Electronics,120,120.00,14400.00,West,Dave,Q3
+ORD021,2024-10-01,Laptop Pro,Electronics,18,1200.00,21600.00,North,Alice,Q4
+ORD022,2024-10-15,Monitor 4K,Electronics,35,800.00,28000.00,South,Bob,Q4
+ORD023,2024-11-03,Standing Desk,Furniture,25,600.00,15000.00,East,Carol,Q4
+ORD024,2024-11-18,Wireless Mouse,Electronics,250,45.00,11250.00,West,Dave,Q4
+ORD025,2024-12-05,Office Chair,Furniture,60,350.00,21000.00,North,Alice,Q4
