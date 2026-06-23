@@ -10,8 +10,20 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-ECS+RDS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </div>
+
+---
+
+## 👤 Author & Attribution
+
+**Built by [Priyabrat Dalbehera](https://github.com/iampriyabrat14)**
+- GitHub: [@iampriyabrat14](https://github.com/iampriyabrat14)
+- LinkedIn: [Priyabrat Dalbehera](https://linkedin.com/in/priyabrat-dalbehera)
+- Email: ipriyabrat689@gmail.com
+
+> If you use this code, architecture, or ideas in your own project, please **credit the original author** with a link back to this repository. See [LICENSE](LICENSE) for full terms.
 
 ---
 

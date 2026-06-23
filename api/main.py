@@ -1,3 +1,4 @@
+# Author: Priyabrat Dalbehera | github.com/iampriyabrat14 | Production Multi-Agent Chatbot
 from dotenv import load_dotenv
 load_dotenv()  # must be first — loads .env before any agent/LLM imports
 
